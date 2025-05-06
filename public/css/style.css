@@ -26,28 +26,16 @@
     transform: scale(1.09);
 }
  
-.login_container{
-    background-color:rgb(39, 40, 43);
-    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
-    padding: 2rem;
-    margin-top: 20px;
-    border-radius: 1.5rem;
-}
-
-.login_container .btnSubmit{
-    margin-top: 10px;
-}
-
-.container{
-    width: 400px;
-}
-
 #username{
-    width: 95%;
+    width: 100%;
 }
 
 #password{
-    width: 95%;
+    width: 100%;
+}
+ 
+.form-group span a{
+    text-decoration: none;
 }
 
 .logo {
@@ -63,8 +51,8 @@
     background: linear-gradient(to bottom, #6a0dad 0%, #3e0e6b 50%, #0a0f3c 100%);
     padding: 3rem;
     border-radius: 0 0 2rem 2rem;
-
 }
+
 
 
 .containerCard {
@@ -75,7 +63,6 @@
 }
 
 .card_container {
-    display: grid;
     row-gap: 3.5rem;
 }
 
@@ -142,6 +129,12 @@
 
 .card_article:not(:hover) .card_data {
     animation: remove-data 1s forwards;
+}
+
+.content{
+    margin-top: 5rem;
+    background: linear-gradient(to top, #6a0dad 0%, #3e0e6b 50%, #0a0f3c 100%);
+    border-radius: 2rem 2rem 0 0;
 }
 
 @keyframes show-data {
