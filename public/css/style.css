@@ -34,9 +34,7 @@
     width: 100%;
 }
  
-.form-group span a{
-    text-decoration: none;
-}
+
 
 .logo {
     width: 5rem;
@@ -60,10 +58,13 @@
     place-items: center;
     margin-inline: 1.5rem;
     padding-block: 5rem;
+
+    
 }
 
 .card_container {
     row-gap: 3.5rem;
+    
 }
 
 .card_article {
