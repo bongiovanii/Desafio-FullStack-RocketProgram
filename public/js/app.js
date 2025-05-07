@@ -20,4 +20,9 @@ angular.module('myApp', ['ngRoute']) // Criamos o "módulo" da nossa aplicação
       .otherwise({ // Se o endereço não for nenhum dos acima
         redirectTo: '/login' // Redireciona para o /login
       });
-  });
+  })
+  .run(function($rootScope, $location) {
+    $rootScope.goToCart = function() {
+        $location.path('/cart');
+    };
+});

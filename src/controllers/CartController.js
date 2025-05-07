@@ -1,10 +1,10 @@
-const prisma = require('../models/PrismaService');
+const prisma = require("../models/PrismaService");
 
 class CartController {
   // Adiciona item ao carrinho
   static async addToCart(req, res) {
     const { productId, quantity } = req.body;
-    const userId = req.userId;
+    const userId = req.user.userId;
 
     try {
       // Verifica se o item já está no carrinho
@@ -23,18 +23,27 @@ class CartController {
 
       // Cria novo item
       const newItem = await prisma.cartItem.create({
-        data: { userId, productId, quantity },
+        data: {
+          quantity,
+          user: {
+            connect: { id: userId },
+          },
+          product: {
+            connect: { id: parseInt(productId) }, // Connect to the existing product
+          },
+        },
       });
 
       res.status(201).json(newItem);
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao adicionar item ao carrinho' });
+      console.error("Erro ao adicionar item ao carrinho:", error);
+      res.status(500).json({ error: "Erro ao adicionar item ao carrinho" });
     }
   }
 
   // Lista os itens do carrinho
   static async getCart(req, res) {
-    const userId = req.userId;
+    const userId = req.user.id;
 
     try {
       const items = await prisma.cartItem.findMany({
@@ -43,7 +52,7 @@ class CartController {
       });
       res.json(items);
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao buscar carrinho' });
+      res.status(500).json({ error: "Erro ao buscar carrinho" });
     }
   }
 
@@ -53,9 +62,10 @@ class CartController {
 
     try {
       await prisma.cartItem.delete({ where: { id: Number(itemId) } });
-      res.json({ message: 'Item removido' });
+      res.json({ message: "Item removido" });
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao remover item' });
+      console.error(error);
+      res.status(500).json({ error: "Erro ao remover item" });
     }
   }
 
@@ -70,7 +80,7 @@ class CartController {
       });
       res.json(updated);
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao atualizar quantidade' });
+      res.status(500).json({ error: "Erro ao atualizar quantidade" });
     }
   }
 }
