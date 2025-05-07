@@ -22,8 +22,8 @@ main {
     transform: scale(1.09);
 }
 
-nav .navbar{
-    background: none ; 
+nav .navbar {
+    background: none;
 }
 
 .navbar-brand img {
@@ -73,12 +73,8 @@ nav .navbar{
     border: none;
 }
 
-/* .form-container .btn{
-    background-color: #6a0dad;
-    border: none;
-} */
 
-.products-container{
+.products-container {
     background: none;
     box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
     padding: 2rem;
@@ -86,13 +82,18 @@ nav .navbar{
 
 }
 
-.table thead{
-    background: none;
+.table {
+    --bs-table-bg: transparent !important;
+    background-color: transparent !important;
+    color: inherit;
+   
 }
 
-.table tbody{
-    background: none;
-
+.table td,
+.table th {
+    background-color: transparent !important;
+    border-color: rgba(255, 255, 255, 0.1);
+    
 }
 
 

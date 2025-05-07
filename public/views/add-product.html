@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="dark">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,13 +9,13 @@
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
-<body class="container">
+<body class="container" >
     <div class="row justify-content-center mt-5">
-        <div class="col-sm-6">
+        <div class="col">
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title text-center">Adionar Produto</h2>
-                    <form ng-submit="addProduct()">
+                    <form ng-submit="addProduct()" >
                         <div class="form-group">
                             <label for="name">Nome:</label>
                             <input type="text" id="name" class="form-control" ng-model="newProduct.name" required>
