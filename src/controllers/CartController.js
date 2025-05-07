@@ -71,18 +71,20 @@ class CartController {
 
   // Atualiza a quantidade
   static async updateQuantity(req, res) {
-    const { itemId, quantity } = req.body;
+    const { itemId } = req.params; // Obtém o itemId da URL
+    const { quantity } = req.body;   // Obtém a quantidade do corpo da requisição
 
     try {
-      const updated = await prisma.cartItem.update({
-        where: { id: itemId },
-        data: { quantity },
-      });
-      res.json(updated);
+        const updated = await prisma.cartItem.update({
+            where: { id: Number(itemId) }, // Use o itemId da rota e converta para Number
+            data: { quantity },
+        });
+        res.json(updated);
     } catch (error) {
-      res.status(500).json({ error: "Erro ao atualizar quantidade" });
+        console.error("Erro ao atualizar quantidade:", error); // Log do erro
+        res.status(500).json({ error: "Erro ao atualizar quantidade" });
     }
-  }
+}
 }
 
 module.exports = CartController;
