@@ -73,6 +73,27 @@ nav .navbar {
     border: none;
 }
 
+.card-container{
+    backdrop-filter: blur(2px);
+    padding: 2rem;
+    border-radius: .5rem;
+    color: white;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
+
+}
+
+.card-container input{
+    background: none;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
+    border: none;
+}
+
+.card-container textarea{
+    background: none;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
+    border: none;
+}
+
 
 .products-container {
     background: none;
@@ -249,10 +270,6 @@ nav .navbar {
 @media screen and (min-width: 1120px) {
     .containerCard {
         height: 100vh;
-    }
-
-    .card_container {
-        grid-template-columns: repeat(3, 1fr);
     }
 
     .card_img {
