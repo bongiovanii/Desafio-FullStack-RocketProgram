@@ -14,6 +14,9 @@ angular.module('myApp')
         .catch(function(error) { // Se a API responder com erro
           $scope.error = true; // Mostra a mensagem de erro
           $scope.errorMessage = 'Credenciais inválidas';
+
+          
         });
+
     };
   });

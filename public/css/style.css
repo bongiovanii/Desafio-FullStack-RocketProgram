@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+main {
+    background: #0a0f3c;
+}
+
 
 .buttonShoppingCart button {
     background: none;
@@ -18,6 +22,10 @@
     transform: scale(1.09);
 }
 
+nav .navbar{
+    background: none ; 
+}
+
 .navbar-brand img {
     transition: 3ms;
 }
@@ -25,16 +33,14 @@
 .navbar-brand img:hover {
     transform: scale(1.09);
 }
- 
-#username{
+
+#username {
     width: 100%;
 }
 
-#password{
+#password {
     width: 100%;
 }
- 
-
 
 .logo {
     width: 5rem;
@@ -52,19 +58,59 @@
 }
 
 
+.form-container {
+    backdrop-filter: blur(2px);
+    padding: 2rem;
+    border-radius: .5rem;
+    color: white;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
+
+}
+
+.form-container input {
+    background: none;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
+    border: none;
+}
+
+/* .form-container .btn{
+    background-color: #6a0dad;
+    border: none;
+} */
+
+.products-container{
+    background: none;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+.table thead{
+    background: none;
+}
+
+.table tbody{
+    background: none;
+
+}
+
 
 .containerCard {
     display: grid;
     place-items: center;
     margin-inline: 1.5rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.603);
     padding-block: 5rem;
+    border-radius: 1rem;
+    margin-bottom: .9rem;
+    padding: 2rem;
 
-    
 }
 
 .card_container {
     row-gap: 3.5rem;
-    
+
 }
 
 .card_article {
@@ -132,7 +178,7 @@
     animation: remove-data 1s forwards;
 }
 
-.content{
+.content {
     margin-top: 5rem;
     background: linear-gradient(to top, #6a0dad 0%, #3e0e6b 50%, #0a0f3c 100%);
     border-radius: 2rem 2rem 0 0;
@@ -185,35 +231,35 @@
         margin-inline: 1rem;
     }
 
-    .card_data{
+    .card_data {
         width: 250px;
         padding: 1rem;
     }
 }
 
-@media screen and (min-width: 768px){
-    .card_container{
+@media screen and (min-width: 768px) {
+    .card_container {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1.5rem;
     }
 }
 
 
-@media screen and (min-width: 1120px){
-    .containerCard{
+@media screen and (min-width: 1120px) {
+    .containerCard {
         height: 100vh;
     }
 
-    .card_container{
+    .card_container {
         grid-template-columns: repeat(3, 1fr);
-    } 
-    .card_img{
+    }
+
+    .card_img {
         width: 500px;
     }
-    
-   .card_data{
-    width: 400px;
-    padding-inline: 2.5rem;
-   }
-} 
 
+    .card_data {
+        width: 400px;
+        padding-inline: 2.5rem;
+    }
+}
