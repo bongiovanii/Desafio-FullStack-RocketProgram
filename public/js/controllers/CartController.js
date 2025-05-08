@@ -2,7 +2,7 @@ angular.module('myApp')
     .controller('CartController', function($scope, $http, $location) {
         $scope.cartItems = [];
 
-        // Fetch cart items on page load
+        
         function fetchCartItems() {
             $http.get('/cart', {
                 headers: {
@@ -20,14 +20,14 @@ angular.module('myApp')
         fetchCartItems();
 
         $scope.addToCart = function(product) {
-          $http.post('/cart', { productId: product.id, quantity: 1 }, { // Send productId and quantity
+          $http.post('/cart', { productId: product.id, quantity: 1 }, {
               headers: {
                   'Authorization': 'Bearer ' + localStorage.getItem('token')
               }
           })
           .then(function(response) {
               console.log('Product added to cart:', response.data);
-              fetchCartItems(); // Refresh cart
+              fetchCartItems();
           })
           .catch(function(error) {
               console.error('Error adding product to cart:', error);
@@ -58,7 +58,7 @@ angular.module('myApp')
             }
           })
           .then(function(response) {
-            item.quantity = quantity; // Update quantity locally
+            item.quantity = quantity;
             console.log('Quantity updated:', response.data);
           })
           .catch(function(error) {

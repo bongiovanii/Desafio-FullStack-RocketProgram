@@ -8,7 +8,7 @@ angular.module('myApp')
     $scope.login = function() { // A função que é chamada quando o usuário clica em "Login"
       $http.post('/auth/login', $scope.credentials) // Envia os dados para a nossa API
         .then(function(response) { // Se a API responder com sucesso
-          // Aqui você vai SALVAR o token JWT (por enquanto, vamos só mostrar)
+          
           localStorage.setItem('token', response.data.token); // Armazena o token no localStorage após o login
           $scope.isLogado = true; // Atualiza a variável de estado de login
           $location.path('/products'); // Redireciona para a página de produtos

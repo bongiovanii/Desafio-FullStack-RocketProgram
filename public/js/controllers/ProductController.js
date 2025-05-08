@@ -3,7 +3,7 @@ angular
   .controller("ProductController", function ($scope, $http, $location) {
     $scope.products = [];
 
-    // Fetch products on page load
+    
     $http
       .get("/products")
       .then(function (response) {

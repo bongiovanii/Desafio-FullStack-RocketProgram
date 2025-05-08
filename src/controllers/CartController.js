@@ -76,7 +76,7 @@ class CartController {
 
     try {
         const updated = await prisma.cartItem.update({
-            where: { id: Number(itemId) }, // Use o itemId da rota e converta para Number
+            where: { id: Number(itemId) },
             data: { quantity },
         });
         res.json(updated);

@@ -27,8 +27,7 @@ Siga estas etapas para configurar e rodar o projeto localmente:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone SEU_REPOSITORIO_AQUI
-    cd desafio-fullstack-rocketprogram/backend
+    git clone https://github.com/bongiovanii/Desafio-FullStack-RocketProgram.git
     ```
 2.  **Instale as dependências:**
     ```bash
